@@ -1,4 +1,4 @@
-import NavItems from '@/components/Navitems';
+import NavItems from '../components/Navitems';
 import React from 'react'
 
 const Navbar = () => {
