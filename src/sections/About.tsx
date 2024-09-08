@@ -115,7 +115,7 @@ const About = () => {
                 </p>
                 <Button name="Contact Me" isBeam containerClass="w-full mt-10" />
                 <div className="mt-2 text-center">
-                    <p className="text-lg font-semibold mb-4">What Clients Say:</p>
+                    <p className="text-lg font-semibold mt-4 text-white-600/80">What Clients Say:</p>
                     <blockquote className="italic text-gray-600">
                     "Utsav has been a game-changer for our projects. His remote collaboration was seamless, and his expertise brought our ideas to life with precision and creativity. Highly recommend!"
                     </blockquote>
