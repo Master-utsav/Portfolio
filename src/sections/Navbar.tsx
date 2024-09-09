@@ -29,7 +29,7 @@ const Navbar = () => {
 
       {/* Sidebar Menu */}
       <div className={`nav-sidebar bg-black-200 ${isOpen ? 'max-h-screen' : 'max-h-0'}`}>
-        <nav className='p-5 text-center'>
+        <nav className='p-5 text-center' onClick={toggleMenu}>
           <NavItems/>
         </nav>
       </div>
