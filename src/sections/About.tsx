@@ -108,7 +108,7 @@ const About = () => {
                 </Canvas>
               )} */}
             </div>
-            <div className='z-50'>
+            <div className='z-1'>
                 <p className="grid-headtext">Building Your Projects Remotely</p>
                 <p className="grid-subtext">
                 Based in Indore, India, but distance is no barrier. I collaborate with clients globally, delivering top-tier projects wherever you are. Let’s turn your ideas into reality, no matter the location.
