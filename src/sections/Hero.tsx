@@ -16,6 +16,7 @@ import BoxAnimationText from "@/components/BoxTextAnimation";
 import StaggeredText from "@/components/StaggeredText";
 import { SparklesCore } from "@/components/Sparkles";
 
+
 const Hero = () => {
 //   const room = useControls("HackerRoom", {
 //     scale:{

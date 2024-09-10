@@ -80,7 +80,10 @@ export default {
 		},
 		transitionProperty: {
 			'clip-path': 'clip-path', // Enable transition for clip-path
-		  },
+		},
+		// screens: {
+		// 'xsm': { 'min': '450px' }, // Custom breakpoint for max-width 450px
+		// },
 	  },
 	},
 	plugins: [require("tailwindcss-animate")],
