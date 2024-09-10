@@ -15,6 +15,7 @@ import Button from "@/components/Button";
 import { SparklesCore } from "@/components/Sparkles";
 import StaggeredTextLinearEffect from "@/components/StaggeredTextLinearEffect";
 import { motion } from "framer-motion";
+import TextBoxBounceEffect from "@/components/TextBoxBounceEffect";
 
 
 const Hero = () => {
@@ -75,15 +76,9 @@ return (
           👋
           </motion.span>
         </p>
-        <div className="h-auto mx-auto overflow-hidden">
-          <motion.p
-            initial={{ opacity: 0, rotateX: 0}}
-            animate={{ opacity: 1, rotateX : 360}}
-            transition={{ duration: 0.2, ease: "easeIn" , delay:1}}
-            className="hero_tag text-gray_gradient relative"
-          >
-          Let me build it for you...
-          </motion.p>
+        <div className="h-auto mx-auto overflow-hidden z-10">
+          <TextBoxBounceEffect text="Let me build it for you..." />
+       
         </div>
       </div>
 
