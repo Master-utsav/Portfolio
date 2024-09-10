@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
 import React from "react";
 
-const text = "UTSAV";
+interface StaggeredBlurTextEffect{
+  text: string
+}
 
-const StaggeredBlurText: React.FC = () => {
-  // Split text into individual letters and span elements
+const StaggeredBlurTextEffect: React.FC<StaggeredBlurTextEffect> = ({text}) => {
   const textArray = text.split("").map((char, index) => (
     <motion.span
       key={index}
@@ -24,4 +25,4 @@ const StaggeredBlurText: React.FC = () => {
   );
 };
 
-export default StaggeredBlurText;
+export default StaggeredBlurTextEffect;

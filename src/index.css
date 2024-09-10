@@ -97,14 +97,13 @@ body {
   }
 
   .nav-li_a {
-    @apply text-lg md:text-base hover:text-white transition-colors z-10 relative;
+    @apply text-lg md:text-base hover:text-white transition-colors relative;
   }
 
   .mask {
     @apply absolute bg-black ;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     transition: transform 0.5s ease;
-    z-index: 1;
     transform: translateY(100%);
     top: 0;
     left: 0;

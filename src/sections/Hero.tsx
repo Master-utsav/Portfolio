@@ -12,9 +12,9 @@ import Cube from "@/components/Cube";
 import Rings from "@/components/Rings";
 import HeroCamera from "@/components/HeroCamera";
 import Button from "@/components/Button";
-import BoxAnimationText from "@/components/BoxTextAnimation";
-import StaggeredText from "@/components/StaggeredText";
 import { SparklesCore } from "@/components/Sparkles";
+import StaggeredTextLinearEffect from "@/components/StaggeredTextLinearEffect";
+import { motion } from "framer-motion";
 
 
 const Hero = () => {
@@ -64,8 +64,27 @@ const sizes = calculateSizes(isSmall, isMobile, isTablet);
 return (
     <section id="home" className="min-h-screen w-full flex-col relative">
       <div  className="w-full mx-auto flex flex-col sm:mt-24 mt-20 c-space gap-3">
-        <StaggeredText/>
-        <BoxAnimationText  text="Let me build it for you..."/>
+        <p className="sm:text-3xl text-2xl font-medium text-white text-center font-generalsans">
+        <StaggeredTextLinearEffect text="Hi, I am UTSAV "/>
+          <motion.span
+          initial={{ opacity: 0, scale: 0}}
+          animate={{ opacity: 1,  scale: 1}}
+          transition={{ duration: 0.5, ease: "easeOut", delay: 1.8 }}
+          className="waving-hand inline-block relative"
+          >
+          👋
+          </motion.span>
+        </p>
+        <div className="h-auto mx-auto overflow-hidden">
+          <motion.p
+            initial={{ opacity: 0, rotateX: 0}}
+            animate={{ opacity: 1, rotateX : 360}}
+            transition={{ duration: 0.2, ease: "easeIn" , delay:1}}
+            className="hero_tag text-gray_gradient relative"
+          >
+          Let me build it for you...
+          </motion.p>
+        </div>
       </div>
 
       <div className="w-full h-full absolute inset-0">
