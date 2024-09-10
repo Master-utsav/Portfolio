@@ -9,6 +9,10 @@ export default {
 		fontFamily: {
 		  generalsans: ['General Sans', 'sans-serif'],
 		},
+		clipPath: {
+			'wave-enter': 'polygon(0 0, 100% 0, 100% 100%, 0 100%)', // Full visibility
+			'wave-exit': 'polygon(0 0, 100% 0, 100% 0, 0 100%)', // Reveal effect
+		},
 		colors: {
 		  black: {
 			DEFAULT: '#000',
@@ -74,6 +78,9 @@ export default {
 		  md: 'calc(var(--radius) - 2px)',
 		  sm: 'calc(var(--radius) - 4px)',
 		},
+		transitionProperty: {
+			'clip-path': 'clip-path', // Enable transition for clip-path
+		  },
 	  },
 	},
 	plugins: [require("tailwindcss-animate")],

@@ -12,6 +12,9 @@ import Cube from "@/components/Cube";
 import Rings from "@/components/Rings";
 import HeroCamera from "@/components/HeroCamera";
 import Button from "@/components/Button";
+import BoxAnimationText from "@/components/BoxTextAnimation";
+import StaggeredText from "@/components/StaggeredText";
+import { SparklesCore } from "@/components/Sparkles";
 
 const Hero = () => {
 //   const room = useControls("HackerRoom", {
@@ -60,12 +63,8 @@ const sizes = calculateSizes(isSmall, isMobile, isTablet);
 return (
     <section id="home" className="min-h-screen w-full flex-col relative">
       <div  className="w-full mx-auto flex flex-col sm:mt-24 mt-20 c-space gap-3">
-        <p className="sm:text-3xl text-2xl font-medium text-white text-center font-generalsans">
-          Hi, I am UTSAV <span className=" waving-hand">👋</span>
-        </p>
-        <p className="hero_tag text-gray_gradient">
-          Let me build it for you...
-        </p>
+        <StaggeredText/>
+        <BoxAnimationText  text="Let me build it for you..."/>
       </div>
 
       <div className="w-full h-full absolute inset-0">
@@ -93,10 +92,30 @@ return (
           </React.Suspense>
         </Canvas>
       </div>
-      <div className="absolute bottom-20 left-0 right-0 w-full z-10 c-space">
+      <div className="absolute sm:bottom-20 bottom-24 left-0 right-0 w-full z-10 c-space">
         <a href="#about" className="w-fit">
         <Button name="let's work together" isBeam containerClass="sm:w-fit w-full sm:min-w-96"/>
-        </a>
+        <div className=" h-40 absolute sm:-bottom-30 -bottom-40 left-0 right-0 w-full -z-10 c-space ">
+        {/* Gradients */}
+        <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
+        <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
+        <div className="absolute left-[40%] right-[40%]  top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
+        <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
+ 
+        {/* Core component */}
+        <SparklesCore
+          background="transparent"
+          minSize={0.4}
+          maxSize={1}
+          particleDensity={1200}
+          className="w-full h-full"
+          particleColor="#FFFFFF"
+        />
+ 
+        {/* Radial Gradient to prevent sharp edges */}
+        <div className="absolute inset-0 w-full h-full bg-black [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
+      </div>
+      </a>
       </div>
     </section>
   );

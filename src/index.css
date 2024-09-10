@@ -93,11 +93,21 @@ body {
   }
 
   .nav-li {
-    @apply text-neutral-400 hover:text-white font-generalsans max-sm:hover:bg-black-500 max-sm:w-full max-sm:rounded-md py-2 max-sm:px-5;
+    @apply text-neutral-400 hover:text-white font-generalsans relative overflow-hidden max-sm:hover:bg-black-500 max-sm:w-full max-sm:rounded-md py-2 max-sm:px-5;
   }
 
   .nav-li_a {
-    @apply text-lg md:text-base hover:text-white transition-colors;
+    @apply text-lg md:text-base hover:text-white transition-colors z-10 relative;
+  }
+
+  .mask {
+    @apply absolute bg-black ;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    transition: transform 0.5s ease;
+    z-index: 1;
+    transform: translateY(100%);
+    top: 0;
+    left: 0;
   }
 
   .nav-sidebar {
