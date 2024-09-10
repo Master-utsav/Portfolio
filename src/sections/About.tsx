@@ -5,6 +5,7 @@ import Globe from 'react-globe.gl';
 import Button from '../components/Button.jsx';
 import TechStackGrid from '@/components/TechStackGrid';
 import { useInView } from 'react-intersection-observer';
+import { SparklesCore } from '@/components/Sparkles.js';
 // import { Canvas } from '@react-three/fiber';
 // import { PerspectiveCamera } from '@react-three/drei';
 // import * as THREE from 'three';
@@ -108,19 +109,42 @@ const About = () => {
                 </Canvas>
               )} */}
             </div>
-            <div className='z-1'>
+            <div className='z-1 '>
                 <p className="grid-headtext">Building Your Projects Remotely</p>
                 <p className="grid-subtext">
                 Based in Indore, India, but distance is no barrier. I collaborate with clients globally, delivering top-tier projects wherever you are. Let’s turn your ideas into reality, no matter the location.
                 </p>
-                <Button name="Contact Me" isBeam containerClass="w-full mt-10" />
-                <div className="mt-2 text-center">
-                    <p className="text-lg font-semibold mt-4 text-white-600/80">What Clients Say:</p>
-                    <blockquote className="italic text-gray-600">
-                    "Utsav has been a game-changer for our projects. His remote collaboration was seamless, and his expertise brought our ideas to life with precision and creativity. Highly recommend!"
-                    </blockquote>
-                    <a href="https://www.linkedin.com/in/master-utsav/" className="mt-6 text-gray-500 text-sm font-generalsans">Ready to start your project? Reach out today and let's make it happen!</a>
+                <div className="relative w-full z-10  mt-4">
+                    <a href="#contact" className="w-fit">
+                    <Button name="Contact me" isBeam containerClass=" w-full font-generalsans"/>
+                    <div className=" h-40 absolute left-0 right-0 w-full -z-10 c-space ">
+                    {/* Gradients */}
+                    <div className="absolute left-[10%] right-[10%] top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
+                    <div className="absolute left-[10%] right-[10%] top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
+                    <div className="absolute left-[40%] right-[40%]  top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
+                    <div className="absolute left-[40%] right-[40%] top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
+            
+                    <SparklesCore
+                      background="transparent"
+                      minSize={0.4}
+                      maxSize={1}
+                      particleDensity={1200}
+                      className="w-full h-full -z-10"
+                      particleColor="#FFFFFF"
+                    />
+            
+                    <div className="absolute inset-0 w-full h-fit -z-10 bg-black [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
+                  </div>
+                  </a>
+                  <div className="mt-2 sm:mt-0 text-center z-20">
+                      <p className="text-lg font-semibold mt-4 text-white/90">What Clients Say:</p>
+                      <blockquote className="italic text-gray-400">
+                      "Utsav has been a game-changer for our projects. His remote collaboration was seamless, and his expertise brought our ideas to life with precision and creativity. Highly recommend!"
+                      </blockquote>
+                      <a href="https://www.linkedin.com/in/master-utsav/" className="mt-6 text-blue-200 text-sm font-generalsans">Ready to start your project? Reach out today and let's make it happen!</a>
+                  </div>
                 </div>
+                
             </div>
           </div>
         </div>
