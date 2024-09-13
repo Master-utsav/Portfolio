@@ -56,7 +56,6 @@ const About = () => {
    useEffect(() => {
     if (inView && globeRef.current) {
       const globe = globeRef.current;
-      console.log(globe);
 
       // Center the globe on the target position
       globe.controls().autoRotate = true; // Disable auto-rotation

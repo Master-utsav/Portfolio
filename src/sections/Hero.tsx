@@ -15,8 +15,8 @@ import Button from "@/components/Button";
 import { SparklesCore } from "@/components/Sparkles";
 import StaggeredTextLinearEffect from "@/components/StaggeredTextLinearEffect";
 import { motion } from "framer-motion";
-import TextBoxBounceEffect from "@/components/TextBoxBounceEffect";
-
+import TextWavyClipEffect from "@/components/TextWavyClipEffect";
+// import TextBoxBounceEffect from "@/components/TextBoxBounceEffect";
 
 const Hero = () => {
 //   const room = useControls("HackerRoom", {
@@ -76,8 +76,9 @@ return (
           👋
           </motion.span>
         </p>
-        <div className="h-auto mx-auto overflow-hidden z-10">
-          <TextBoxBounceEffect text="Let me build it for you..." />
+        <div className="h-auto mx-auto overflow-hidden z-10 relative">
+          {/* <TextBoxBounceEffect text="Let me build it for you..." /> */}
+          <TextWavyClipEffect text="Let me build it for you..." />
        
         </div>
       </div>

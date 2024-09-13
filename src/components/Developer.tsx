@@ -17,14 +17,12 @@ const Developer: React.FC<DeveloperProps> = ({ animationName = 'standup', ...pro
   const dancing = useFBX('/models/animations/dancing.fbx');
   const happy_idle = useFBX('/models/animations/happy_idle.fbx');
 
-  // Rename the animation clips to match the expected names
   standup.animations[0].name = 'standup';
   bore_idle.animations[0].name = 'bore_idle';
   arm_strech.animations[0].name = 'arm_strech';
   dancing.animations[0].name = 'dancing';
   happy_idle.animations[0].name = 'happy_idle';
 
-  // Filter out animation tracks that don't have corresponding bones in the GLTF model
   const filterTracks = (clip: THREE.AnimationClip) => {
     clip.tracks = clip.tracks.filter((track) => {
       const boneName = track.name.split('.')[0];
@@ -48,13 +46,16 @@ const Developer: React.FC<DeveloperProps> = ({ animationName = 'standup', ...pro
   );
 
   useEffect(() => {
+    let action: THREE.AnimationAction | null = null;;
+
     if (actions && actions[animationName]) {
-      actions[animationName].reset().fadeIn(0.5).play();
+      action = actions[animationName];
+      action.reset().fadeIn(0.5).play();
     }
 
     return () => {
-      if (actions && actions[animationName]) {
-        actions[animationName].fadeOut(0.5);
+      if (action) {
+        action.fadeOut(0.5);
       }
     };
   }, [actions, animationName]);
