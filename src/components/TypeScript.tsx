@@ -1,5 +1,5 @@
 import React from "react";
-import { useGLTF, PerspectiveCamera, useTexture } from "@react-three/drei";
+import { useGLTF, PerspectiveCamera, useTexture, Float } from "@react-three/drei";
 import * as THREE from "three";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -33,7 +33,8 @@ const TypeScript: React.FC<JSX.IntrinsicElements["group"]> = (props) => {
   }, [hovered]);
 
   return (
-    <group
+    <Float floatIntensity={0.02}>
+      <group
       {...props}
       dispose={null}
       ref={typescriptRef}
@@ -66,6 +67,8 @@ const TypeScript: React.FC<JSX.IntrinsicElements["group"]> = (props) => {
         <meshMatcapMaterial map={textureBack} toneMapped={false} />
       </mesh>
     </group>
+    </Float>
+    
   );
 };
 
