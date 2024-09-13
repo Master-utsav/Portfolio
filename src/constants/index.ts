@@ -55,7 +55,7 @@ export const navLinks = [
       id: 4,
       name: 'Neha Patel',
       position: 'CEO of InnovateHub',
-      img: 'assets/review4.png',
+      img: 'assets/review4.jpg',
       review:
         'Utsav was a pleasure to work with. He understood our needs perfectly and delivered a website that exceeded our expectations. His skills in both frontend and backend development are outstanding.',
     },
@@ -260,6 +260,8 @@ export const navLinks = [
       reactLogoPosition: isSmall ? [-3, 10, 0] : isMobile ? [10, 7, 0] : isTablet ? [15, 4, 0] : [18, 10, 0],
       ringPosition: isSmall ? [-7, 10, 0] : isMobile ? [-10, 10, 0] : isTablet ? [-16, 10, 0] : [-24, 14, 0],
       targetPosition: isSmall ? [-5, -10, -10] : isMobile ? [-7, -10, -10] : isTablet ? [-11, -7, -10] : [-13, -5, -10],
+      mongodbPosition: isSmall ? [0.3, -3.9, 2.5] : isMobile ? [5.1 , -1,1 , 2.5] : isTablet ? [7.7, 0.5, -0.5] : [9.5, 0.3, -0.5],
+      typescriptPosition: isSmall ? [0.9, 0.1, -11.5] : isMobile ? [-6.3, 2.1, -6.3] : isTablet ? [-10.3, 2.1, -5.9] : [-11.1, 3.7, -5.9],
     };
   };
   // scale={0.1}
@@ -269,29 +271,48 @@ export const navLinks = [
   export const workExperiences = [
     {
       id: 1,
-      name: 'Framer',
-      pos: 'Lead Web Developer',
-      duration: '2022 - Present',
-      title: "Framer serves as my go-to tool for creating interactive prototypes. I use it to bring designs to  life, allowing stakeholders to experience the user flow and interactions before development.",
-      icon: '/assets/framer.svg',
-      animation: 'bore_idle',
+      name: 'React',
+      pos: 'Frontend Development',
+      duration: 'August 2023 - Present',
+      title: "React: My Framework of Choice for Dynamic and Scalable Frontend Development, allowing me to build responsive and interactive user interfaces that adapt seamlessly across devices.",
+      icon: '/assets/react_svg.svg',
+      animation: 'bore_idle'
     },
     {
       id: 2,
-      name: 'Figma',
-      pos: 'Web Developer',
-      duration: '2020 - 2022',
-      title: "Figma is my collaborative design platform of choice. I utilize it to work seamlessly with team members and clients, facilitating real-time feedback and design iterations. Its cloud-based.",
-      icon: '/assets/figma.svg',
-      animation: 'arm_strech',
+      name: 'NodeJs + Express',
+      pos: 'Backend Development',
+      duration: 'January 2024 - Present',
+      title: "NodeJs + Express: Powering My Backend for Fast and Efficient Server-Side Development, providing the scalability and speed needed to handle API requests and data-intensive operations.",
+      icon: '/assets/nodejs_svg.svg',
+      animation: 'arm_strech'
     },
     {
       id: 3,
-      name: 'Notion',
-      pos: 'Junior Web Developer',
-      duration: '2019 - 2020',
-      title: "Notion helps me keep my projects organized. I use it for project management, task tracking, and as a central hub for documentation, ensuring that everything from design notes to.",
-      icon: '/assets/notion.svg',
-      animation: 'dancing',
+      name: 'TypeScript + NextJs',
+      pos: 'Full Stack Framework',
+      duration: 'March 2024 - Present',
+      title: "TypeScript + NextJs: My Go-To Stack for Full-Stack Development and Scalability, offering a robust type system and seamless server-side rendering for highly performant web applications.",
+      icon: '/assets/nextjs_svg.svg',
+      animation: 'dancing'
     },
+    {
+      id: 4,
+      name: 'Rust + WEB3',
+      pos: 'Blockchain & Crypto',
+      duration: 'July 2024 - Current',
+      title: "Rust + WEB3: Crafting Secure and High-Performance Blockchain Solutions, leveraging Rust's memory safety and performance features to build decentralized applications and smart contracts.",
+      icon: '/assets/rust_svg.svg',
+      animation: 'happy_idle'
+    },
+    {
+      id: 5,
+      name: 'Expo + React-Native',
+      pos: 'Cross Platform Mobile App Development',
+      duration: 'August 2024 - Current',
+      title: "Expo + React-Native: Creating Seamless Cross-Platform Mobile Applications, ensuring optimal performance and a native-like experience across both iOS and Android devices through a single codebase.",
+      icon: '/assets/expo_svg.svg',
+      animation: 'bore_idle'
+    }
+    
   ];

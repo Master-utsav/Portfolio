@@ -1,8 +1,9 @@
 import CanvasLoader from '@/components/CanvasLoader';
 import Developer from '@/components/Developer';
+import DustParticles from '@/components/DustParticals';
 import LightRay from '@/components/LightRay';
 import { workExperiences } from '@/constants'
-import { OrbitControls } from '@react-three/drei';
+import { Float, OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber'
 import React from 'react'
 
@@ -13,17 +14,28 @@ const Experience = () => {
         <div className='w-full text-white-600'>
             <h3 className='head-text'>My Experience</h3>
             <div className='work-container'>
-                <div className='work-canvas'>
-                    <Canvas>
-                        <ambientLight intensity={7}/>
-                        <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1}/>
-                        <directionalLight position={[10, 10, 10]} intensity={1}/>
-                        <OrbitControls maxPolarAngle={Math.PI/2} enableZoom={false}/>
+                <div className='work-canvas bg-transparent'>
+                    <LightRay
+                          bgColor="#00000000"
+                          lightRay1="#0000ff3c"
+                          lightRay2="#0c80fc70"
+                          lightRay3="#0000ff3c"
+                        >
+                          <Canvas>
+                            <ambientLight intensity={7}/>
+                            <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1}/>
+                            <directionalLight position={[10, 10, 10]} intensity={1}/>
+                            <OrbitControls maxPolarAngle={Math.PI/2} enableZoom={false}/>
 
-                        <React.Suspense fallback={<CanvasLoader/>}>
-                            <Developer position-y={-3} scale={3} animationName={animationName}/>
-                        </React.Suspense>
-                    </Canvas>
+                            <React.Suspense fallback={<CanvasLoader/>}>
+                            <Float floatIntensity={0.02}>
+                              <DustParticles floatIntensity={2} size={0.1} color='blue'/>
+                              <DustParticles floatIntensity={3} size={0.1} color='white'/>
+                                <Developer position-y={-3} scale={3} position-z={-1} animationName={animationName}/>
+                            </Float>
+                            </React.Suspense>
+                        </Canvas>
+                    </LightRay>
                 </div>
                 <div className="work-content relative">
                     <LightRay

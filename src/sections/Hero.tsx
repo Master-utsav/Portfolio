@@ -6,7 +6,7 @@ import Target from "@/components/Target";
 import { calculateSizes } from "@/constants";
 import { PerspectiveCamera } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { Leva } from "leva";
+// import { Leva, useControls } from "leva";
 import { useMediaQuery } from "react-responsive";
 import Cube from "@/components/Cube";
 import Rings from "@/components/Rings";
@@ -16,46 +16,47 @@ import { SparklesCore } from "@/components/Sparkles";
 import StaggeredTextLinearEffect from "@/components/StaggeredTextLinearEffect";
 import { motion } from "framer-motion";
 import TextWavyClipEffect from "@/components/TextWavyClipEffect";
-// import TextBoxBounceEffect from "@/components/TextBoxBounceEffect";
+import MongoDB from "@/components/MongoDB";
+import TypeScript from "@/components/TypeScript";
 
 const Hero = () => {
-//   const room = useControls("HackerRoom", {
-//     scale:{
-//       value: 0.01,
-//       min: 0.01,
-//       max: 10
-//     },
-//     positionX:{
-//       value: 2.5,
-//       min: -10,
-//       max: 10
-//     },
-//     positionY:{
-//       value: 2.5,
-//       min: -10,
-//       max: 10
-//     },
-//     positionZ:{
-//       value: 2.5,
-//       min: -10,
-//       max: 10
-//     },
-//     rotationX:{
-//       value: 0,
-//       min: -10,
-//       max: 10
-//     },
-//     rotationY:{
-//       value: 0,
-//       min: -10,
-//       max: 10
-//     },
-//     rotationZ:{
-//       value: 0,
-//       min: -10,
-//       max: 10
-//     }
-//   });
+  // const room = useControls("HackerRoom", {
+  //   scale:{
+  //     value: 0.01,
+  //     min: 0.01,
+  //     max: 10
+  //   },
+  //   positionX:{
+  //     value: 2.5,
+  //     min: -20,
+  //     max: 20
+  //   },
+  //   positionY:{
+  //     value: 2.5,
+  //     min: -20,
+  //     max: 20
+  //   },
+  //   positionZ:{
+  //     value: 2.5,
+  //     min: -20,
+  //     max: 20
+  //   },
+  //   rotationX:{
+  //     value: 0,
+  //     min: -10,
+  //     max: 10
+  //   },
+  //   rotationY:{
+  //     value: 0,
+  //     min: -10,
+  //     max: 10
+  //   },
+  //   rotationZ:{
+  //     value: 0,
+  //     min: -10,
+  //     max: 10
+  //   }
+  // });
 const isSmall = useMediaQuery({ maxWidth: 440 });
 const isMobile = useMediaQuery({ maxWidth: 768 });
 const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
@@ -84,7 +85,7 @@ return (
       </div>
 
       <div className="w-full h-full absolute inset-0">
-        <Leva/>
+        {/* <Leva/> */}
         <Canvas className="h-full w-full">
           <React.Suspense fallback={<CanvasLoader />}>
             <PerspectiveCamera makeDefault position={[0, 0, 20]} />
@@ -101,10 +102,13 @@ return (
                 <ReactLogo position={sizes.reactLogoPosition as [number , number , number]}/>
                 <Cube position={sizes.cubePosition}/>
                 <Rings position={sizes.ringPosition}/>
+                <MongoDB position={sizes.mongodbPosition as [number , number , number]} scale={0.1} />
+                <TypeScript position={sizes.typescriptPosition as [number , number , number]} scale={0.12} />
+                {/* <TypeScript position={[room.positionX, room.positionY, room.positionZ]} rotation={[room.rotationX, room.rotationY, room.rotationZ]} scale={room.scale}/> */}
+                {/* <OrbitControls maxPolarAngle={Math.PI / 2} enableZoom={false} /> */}
              </group>
             <ambientLight intensity={1} />
             <directionalLight position={[10, 10, 10]} intensity={0.5} />
-                {/* <OrbitControls maxPolarAngle={Math.PI / 2} enableZoom={false} /> */}
           </React.Suspense>
         </Canvas>
       </div>
