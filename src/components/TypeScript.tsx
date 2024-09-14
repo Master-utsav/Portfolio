@@ -6,8 +6,8 @@ import { useGSAP } from "@gsap/react";
 
 const TypeScript: React.FC<JSX.IntrinsicElements["group"]> = (props) => {
   const { nodes, materials } = useGLTF("/models/ts.glb");
-  const texture = useTexture("/textures/white.jpg");
-  const textureBack = useTexture("/textures/blue.jpg");
+  const texture = useTexture("/textures/silver.jpg");
+  const textureBack = useTexture("/textures/dark_blue.jpg");
 
   const typescriptRef = React.useRef<THREE.Group>(null);
   const [hovered, setHovered] = React.useState(false);
@@ -33,7 +33,7 @@ const TypeScript: React.FC<JSX.IntrinsicElements["group"]> = (props) => {
   }, [hovered]);
 
   return (
-    <Float floatIntensity={0.02}>
+    <Float floatIntensity={0.01}>
       <group
       {...props}
       dispose={null}

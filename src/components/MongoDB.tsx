@@ -11,7 +11,8 @@ import * as THREE from "three";
 
 const MongoDB: React.FC<JSX.IntrinsicElements["group"]> = (props) => {
   const { nodes, materials } = useGLTF("/models/mongoDB.glb");
-  const texture = useTexture("/textures/mongodb.png");
+  const texture = useTexture("/textures/white.jpg");
+  const textureLeaf = useTexture("/textures/mongodb.png");
   const textureback = useTexture("/textures/cube_nextjs.png");
 
   const mongoDBRef = React.useRef<THREE.Group>(null);
@@ -60,7 +61,8 @@ const MongoDB: React.FC<JSX.IntrinsicElements["group"]> = (props) => {
           material={materials.logo_1}
           position={[1.481, -0.622, 0.558]}
         >
-          <meshMatcapMaterial matcap={texture} toneMapped={false} />
+          <meshMatcapMaterial matcap={textureLeaf} toneMapped={false} />
+          
         </mesh>
         <mesh
           castShadow

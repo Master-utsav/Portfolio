@@ -163,11 +163,18 @@ body {
 
   /* clients section */
   .client-container {
-    @apply grid md:grid-cols-2 grid-cols-1 gap-5 mt-12;
+    @apply flex gap-5 mt-12 max-w-7xl mx-auto overflow-x-auto;
+    scroll-snap-type: x mandatory; 
+    scrollbar-width: none; 
   }
-
+  
+  .client-container::-webkit-scrollbar {
+    display: none;
+  }
+  
   .client-review {
-    @apply rounded-lg md:p-10 p-5 col-span-1 bg-black-300 bg-opacity-50;
+    @apply rounded-lg p-5 bg-black-300 bg-opacity-50 flex-shrink-0; 
+    scroll-snap-align: start; 
   }
 
   .client-content {
