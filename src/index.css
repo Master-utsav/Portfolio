@@ -164,8 +164,8 @@ body {
   /* clients section */
   .client-container {
     @apply flex gap-5 mt-12 max-w-7xl mx-auto overflow-x-auto;
-    scroll-snap-type: x mandatory; 
-    scrollbar-width: none; 
+    /* scroll-snap-type: x mandatory; 
+    scrollbar-width: none;  */
   }
   
   .client-container::-webkit-scrollbar {
